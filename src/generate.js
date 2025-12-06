@@ -1,19 +1,19 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Generate = () => {
-   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault(); // form submit stop
-    navigate("/tickets"); // route change
-  };
+  //  const navigate = useNavigate();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault(); // form submit stop
+  //   navigate("/tickets"); // route change
+  // };
   return (
     <div className="App">
-     <div class="isolate bg-gray-9  00 px-6 py-24 sm:py-32 lg:px-8">
+     <div class="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
 
   <div class="mx-auto max-w-2xl ">
     <h2 class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Generate Ticket</h2>
   </div>
-  <form onSubmit={handleSubmit} class="mx-auto mt-8 max-w-xl ">
+  <form  class="mx-auto mt-8 max-w-xl ">
     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
  
       <div class="sm:col-span-2">
@@ -33,11 +33,12 @@ const Generate = () => {
     </div>
       
     <div class="mt-10">
+      <Link to={"/tickets"}>
   <button type='button'
-  onClick={() => navigate('/tickets')}
   class="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400">
   Submit
 </button>
+</Link>
     </div>
     
   </form>

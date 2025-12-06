@@ -1,29 +1,61 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Tickets = () => {
+  const arr = [{
+    ticketNo: "1sdfnjsdfjksd24",
+    des: "asdasd",
+    date: "06-12-2024"
+  },{
+    ticketNo: "2266",
+    des: "asdehfhfasd",
+    date: "06-12-2024"
+  },{
+    ticketNo: "2343",
+    des: "asdasd",
+    date: "06-12-2024"
+  }]
+
+  console.log(arr)
   return (
     <>
     <div className="App">
-     <div class="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
-    <ul role="list" class="divide-y divide-white/5">
-  <li class="flex justify-center gap-x-2 py-5">
-    < div class="flex min-w-0 gap-x-4">
-     
-      <div class="min-w-0 mr-4 flex-auto">
-        <p class="text-sm/6 font-semibold text-white">Ticket No.</p>
-      </div>
-    </div>
-    <div class="mr-4 shrink-0 sm:flex sm:flex-col sm:items-end">
-      <p class="text-sm/6 text-white">Description</p>
-    </div>
-    <div class="ml-4 shrink-0 sm:flex sm:flex-col sm:items-end">
-      <p class="text-sm/6 text-white">Co-Founder / CEO</p>
-      <p class="mt-1 text-xs/5 text-gray-400">Last seen <time datetime="2023-01-23T13:23Z">3h ago</time></p>
-    </div>
-  </li>
-</ul>
+     <div class="isolate bg-gray-900 mb-50 px-2 py-24 sm:py-14 lg:px-8">
+  <div class="bg-gray-700 shadow-md rounded-md p-4 mx-auto max-w-3xl mt-16">
+    <div className='flex items-center justify-between py-2 border-b border-gray-300'>
+    <h2 class="text-xl text-white font-semibold mb-4">List of Tickets</h2>
+    <Link to={"/"}>
+    <button class="bg-blue-500 hover:bg-blue-700 mb-4 text-white font-bold   px-4 rounded">
+  Add Ticket
+</button>
+</Link>
 </div>
+   <table class="ml-2 table-fixed w-full text-left border-collapse">
+  <thead>
+    <tr class="border-b border-gray-600">
+      <th class="w-1/3 px-4 py-2 font-semibold text-white whitespace-nowrap">Ticket No.</th>
+      <th class="w-1/3 px-4 py-2 font-semibold text-white whitespace-nowrap">Description</th>
+      <th class="w-1/4 px-4 py-2 font-semibold text-white whitespace-nowrap text-green-400">Date</th>
+    </tr>
+  </thead>
+    {/* Yaha Map Lgy ga */}
+    {arr.map((item)=> (
+      <tbody>
+    <tr class="border-b border-gray-600">
+      <td   class="px-4 py-2 whitespace-nowrap text-white break-all">{item.ticketNo}</td>
+      <td class="px-4 py-2 text-white truncate">{item.des}</td>
+      <td class="px-4 py-2 whitespace-nowrap text-green-400">{item.date}</td>
+    </tr>
+     </tbody>
+    ))}
+    </table>
 </div>
+
+</div>
+
+</div>
+
+
     </>
   )
 }
