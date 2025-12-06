@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { useNavigate } from "react-router-dom";
+
+
 
 function App() {
+  const navigate = useNavigate();
   return (
     <div className="App">
      <div class="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
@@ -27,9 +31,15 @@ function App() {
       </div>
     
     </div>
+      
     <div class="mt-10">
-      <button type="submit" class="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Submit</button>
+  <button type='button'
+  onClick={() => navigate('/tickets')}
+  class="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400">
+  Submit
+</button>
     </div>
+    
   </form>
 </div>
 
