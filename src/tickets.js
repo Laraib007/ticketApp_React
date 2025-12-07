@@ -16,7 +16,6 @@ const Tickets = () => {
     date: "06-12-2024"
   }]
 
-  console.log(arr)
   return (
     <>
     <div className="App">
