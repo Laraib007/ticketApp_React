@@ -21,11 +21,12 @@ const Generate = () => {
      const oldTicket =  localStorage.getItem("ticket")
      let parse = JSON.parse(oldTicket)
      let newObj =  JSON.stringify(obj)
-     const pushNew = parse.newKey = newObj
+     const pushNew = parse.push( newObj)
    
     console.log(pushNew)  
+    return  
     } 
-     localStorage.setItem("ticket", JSON.stringify(obj))
+     localStorage.setItem("ticket", JSON.stringify([obj]))
 
   }
 
