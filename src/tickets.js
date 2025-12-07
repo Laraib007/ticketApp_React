@@ -7,7 +7,7 @@ const Tickets = () => {
   return (
     <>
     <div className="App">
-     <div class="isolate bg-gray-900 mb-50 px-2 py-24 sm:py-14 lg:px-8">
+     <div class="isolate h-screen from-gray-900 to-gray-900 bg-gray-900 mb-50 px-2 py-24 sm:py-14 lg:px-8">
   <div class="bg-gray-700 shadow-md rounded-md p-4 mx-auto max-w-3xl mt-16">
     <div className='flex items-center justify-between py-2 border-b border-gray-300'>
     <h2 class="text-xl text-white font-semibold mb-4">List of Tickets</h2>
