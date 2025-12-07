@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const Tickets = () => {
   const arr = localStorage.getItem("ticket")
   let arrMap = JSON.parse(arr)
-console.log([arrMap])
   return (
     <>
     <div className="App">
@@ -27,7 +26,7 @@ console.log([arrMap])
     </tr>
   </thead>
     {/* Yaha Map Lgy ga */}
-    {[arrMap].map((item)=> (
+    {arrMap.map((item)=> (
       <tbody>
     <tr class="border-b border-gray-600">
       <td   class="px-4 py-2 whitespace-nowrap text-white break-all">{item.title}</td>
