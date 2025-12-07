@@ -2,20 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Tickets = () => {
-  const arr = [{
-    ticketNo: "1sdfnjsdfjksd24",
-    des: "asdasd",
-    date: "06-12-2024"
-  },{
-    ticketNo: "2266",
-    des: "asdehfhfasd",
-    date: "06-12-2024"
-  },{
-    ticketNo: "2343",
-    des: "asdasd",
-    date: "06-12-2024"
-  }]
-
+  const arr = localStorage.getItem("ticket")
+  let arrMap = JSON.parse(arr)
+console.log([arrMap])
   return (
     <>
     <div className="App">
@@ -38,12 +27,12 @@ const Tickets = () => {
     </tr>
   </thead>
     {/* Yaha Map Lgy ga */}
-    {arr.map((item)=> (
+    {[arrMap].map((item)=> (
       <tbody>
     <tr class="border-b border-gray-600">
-      <td   class="px-4 py-2 whitespace-nowrap text-white break-all">{item.ticketNo}</td>
+      <td   class="px-4 py-2 whitespace-nowrap text-white break-all">{item.title}</td>
       <td class="px-4 py-2 text-white truncate">{item.des}</td>
-      <td class="px-4 py-2 whitespace-nowrap text-green-400">{item.date}</td>
+      <td class="px-4 py-2 whitespace-nowrap text-green-400">{"item.date"}</td>
     </tr>
      </tbody>
     ))}

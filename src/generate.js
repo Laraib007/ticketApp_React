@@ -18,9 +18,14 @@ const Generate = () => {
       "title": title
     }
     if( localStorage.getItem("ticket")){
-    localStorage.setItem("ticket", JSON.stringify(obj))
-    console.log(JSON.stringify(obj))  
-    }
+     const oldTicket =  localStorage.getItem("ticket")
+     let parse = JSON.parse(oldTicket)
+     let newObj =  JSON.stringify(obj)
+     const pushNew = parse.newKey = newObj
+   
+    console.log(pushNew)  
+    } 
+     localStorage.setItem("ticket", JSON.stringify(obj))
 
   }
 
