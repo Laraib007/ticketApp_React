@@ -4,10 +4,13 @@ const express = require('express')
 
 connectToMongoose()
 
+
 const app = express()
 const port = "5000"
 
 
+app.use(express.json());  // <- IMPORTANT
+app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 app.use("/api/auth", require("./routes/auth"))
