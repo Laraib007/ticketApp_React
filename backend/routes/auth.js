@@ -1,21 +1,20 @@
 const express = require('express');
+const users = require('../modules/users');
 const router = express.Router();
 
-router.get('/lala', (req, res) => {
-    res.send("Hello Labi from /lala!");
+// Creating a New User
+router.post('/create', async (req, res) => {
+   
+
+    let user = await users.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    })
+    res.send(user );
 });
 
-router.get('/okk', (req, res) => {
-    res.send("okkk");
-});
 
-router.get('/laraib', (req, res) => {
-    res.send("laraib");
-});
-
-router.get('/shawaiz', (req, res) => {
-    res.send("shao bhai ");
-});
 
 
 module.exports = router;
