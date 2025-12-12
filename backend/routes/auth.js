@@ -1,6 +1,7 @@
 const express = require('express');
 const users = require('../modules/users');
 const router = express.Router();
+var jwt = require('jsonwebtoken');
 
 // Creating a New User
 router.post('/create', async (req, res) => {
@@ -14,8 +15,8 @@ if(user){
         email: req.body.email,
         password: req.body.password
     })
-    
-    res.send(user );
+    let token = await jwt.sign({user}, 'shhhhh');
+    res.json({"jwtToken": token} );
     }
 });
 
