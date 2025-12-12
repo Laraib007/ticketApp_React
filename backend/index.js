@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 app.use("/api/auth", require("./routes/auth"))
-// app.use("/api/notes", require("./routes/notes"))
+app.use("/api/ticket", require("./routes/ticket"))
 
 app.get('/', (req, res) => {
   res.send('Hello Labi!')
