@@ -2,6 +2,7 @@ const express = require('express');
 const users = require('../modules/users');
 const router = express.Router();
 var jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 // Creating a New User
 router.post('/create', async (req, res) => {
@@ -10,10 +11,12 @@ if(user){
     res.status(404).send("User Aleady Exist") 
     return
 } else {
-     user = await users.create({
+   const salt = await bcrypt.genSalt(10)
+    const bcy = await bcrypt.hash(req.body.password, salt)
+     user = await users.create( {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: bcy
     })
     let token = await jwt.sign(user.email, 'shhhhh');
     res.json({"jwtToken": token} );
