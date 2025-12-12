@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Tickets = () => {
+const Tickets =  () => {
+ const a = async () => {
+  const res = await fetch("http://localhost:5000/api/ticket/fetchall");
+  const data = await res.json();   // <-- yahan actual tickets aengi
+  console.log(data);               // tickets ko print karo
+};
+
+a();
+
   const arr = localStorage.getItem("ticket")
   let arrMap = JSON.parse(arr)
   return (
