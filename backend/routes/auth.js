@@ -14,6 +14,7 @@ if(user){
         email: req.body.email,
         password: req.body.password
     })
+    
     res.send(user );
     }
 });

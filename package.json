@@ -12,6 +12,7 @@
     "express": "^5.2.1",
     "flowbite": "^4.0.1",
     "flowbite-react": "^0.12.10",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.1",
     "nodemon": "^3.1.11",
     "postcss-loader": "^8.2.0",
