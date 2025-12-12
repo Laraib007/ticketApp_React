@@ -13,6 +13,12 @@ router.post('/create', async (req, res) => {
     return
 });
 
+router.get('/fetchall', async (req, res) => {
+
+     let ticket = await tickets.find()
+    res.json({"Ticket": ticket} );
+    return
+});
 
 
 
